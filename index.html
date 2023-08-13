@@ -5,16 +5,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .progress-bar {
+            transition: width .1s ease-in-out;
+        }
+    </style>
     <title>Pomodoro Timer</title>
 </head>
 
 <body class="bg-gray-900 min-h-screen flex flex-col justify-between items-center text-white">
     <header class="text-center py-4">
-        <h1 class="pt-12 md:pt-32 text-2xl md:text-4xl font-bold">Pomodoro Timer</h1>
+        <h1 id="headerTitle" class="pt-12 md:pt-32 text-2xl md:text-4xl font-bold">Pomodoro Timer</h1>
     </header>
     <div class="container flex flex-col justify-center w-11/12 md:w-1/4 mx-auto p-6 bg-gray-800 rounded-lg shadow-lg">
+        <audio id="notification-sound1" src="upTone.mp3"></audio>
+        <audio id="notification-sound2" src="downTone.mp3"></audio>
+        <audio id="notification-sound3" src="note.mp3"></audio>
         <div class="flex flex-col items-center justify-center">
-            <h1 id="timer" class="text-2xl md:text-4xl font-bold mb-6">25:00</h1>
+            <h1 id="timer" class="text-2xl md:text-5xl font-bold my-2">25:00</h1>
+            <div class="progress-bar my-3">
+                <div class="w-full h-2 rounded-lg bg-blue-500 my-2"></div>
+            </div>
             <div class="mb-4 text-center">
                 <label for="work-duration" class="block font-semibold mb-2">Work Duration (minutes)</label>
                 <input id="work-duration" type="number" min="1" value="25" class="px-2 py-1 rounded bg-gray-700 text-white">
