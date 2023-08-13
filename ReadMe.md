@@ -9,10 +9,6 @@ This is a simple Pomodoro Timer app created using HTML, CSS [Tailwind CSS](https
 - Pause and resume the timer.
 - Visual cues for work and break sessions.
 
-## Customize Notification Sound
-
-You can customize the notification sound that plays when a session ends. To do this, modify the `playNotificationSound` function in the `script.js` file to play your preferred sound.
-
 ## Contributions
 
 Contributions to this project are welcome. If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
